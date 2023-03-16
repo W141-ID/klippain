@@ -45,7 +45,7 @@ function check_download {
 
     if [ ! -d "${FRIX_CONFIG_PATH}" ]; then
         echo "[DOWNLOAD] Downloading Frix-x configuration folder..."
-        if git -C $frixtemppath clone https://github.com/Frix-x/klipper-voron-V2.git $frixreponame; then
+        if git -C $frixtemppath clone -b v3.0.0-alpha https://github.com/Frix-x/klipper-voron-V2.git $frixreponame; then
             chmod +x ${FRIX_CONFIG_PATH}/install.sh
             printf "[DOWNLOAD] Download complete!\n\n"
         else
