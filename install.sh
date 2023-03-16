@@ -11,11 +11,11 @@
 
 
 # Where the user Klipper config is located (ie. the one used by Klipper to work)
-USER_CONFIG_PATH="$(realpath -e ${HOME}/alpha_v24_data/config)"
+USER_CONFIG_PATH="$(realpath -e ${HOME}/v24_data/config)"
 # Where to clone Frix-x repository config files (read-only and keep untouched)
-FRIX_CONFIG_PATH="${HOME}/alpha_w141-id_config"
+FRIX_CONFIG_PATH="${HOME}/w141-id_config"
 # Path used to store backups when updating (backups are automatically dated when saved inside)
-BACKUP_PATH="${HOME}/alpha_v24_data_config_backups"
+BACKUP_PATH="${HOME}/v24_config_backups"
 
 
 set -eu
@@ -45,7 +45,7 @@ function check_download {
 
     if [ ! -d "${FRIX_CONFIG_PATH}" ]; then
         echo "[DOWNLOAD] Downloading Frix-x configuration folder..."
-        if git -C $frixtemppath clone https://github.com/W141-ID/klipper-voron-V2/tree/alpha_custom-linkage.git $frixreponame; then
+        if git -C $frixtemppath clone https://github.com/Frix-x/klipper-voron-V2.git $frixreponame; then
             chmod +x ${FRIX_CONFIG_PATH}/install.sh
             printf "[DOWNLOAD] Download complete!\n\n"
         else
